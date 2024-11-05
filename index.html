@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="bootstrap-5.3.1-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="normalize">
+    <title>Esquadrão da Vida</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    </head>
+  <body>
+    <header class="header_content">
+      <div class="header_content_logo">
+        <img src="" alt="" class="logo_menu"></img>
+          <span id="hamburguer" class="material-symbols-rounded">menu</span>
+          <nav id="itens_menu" class="header_nav">
+            <ul>
+                <li><a href="#section_imginicio">Início</a></li>
+                <li><a href="#section_imgsobrenos">Sobre nós</a></li>
+                <li><a href="#section_imgmetodologia">Metodologia</a></li>
+                <li><a href="#section_imgprojetos">Projetos</a></li>
+                <li><a href="#section_imgacolhimento">Acolhimento</a></li>
+                <li><a href="#section_imgfotos">Fotos</a></li>
+                <li><a href="#section_imglocalizacao">Localização</a></li>
+                <li><a href="#section_imgcontato">Contato</a></li>
+            </ul>
+        </nav>
+      </div>
+</header>
+<script>
+var hamburguer = document.getElementById('hamburguer');
+var itensMenu = document.getElementById('itens_menu');
+
+hamburguer.addEventListener('click', aparecer);
+
+  function aparecer(){ 
+    if (itens_menu.style.display == 'block'){
+        itensMenu.classList.remove('show');
+    } else {
+        itensMenu.classList.toggle('show');
+    }
+  }
+
+  (function(){
+      window.addEventListener('scroll', destacaMenu);  
+      var $menu = document.querySelector('.nav');
+      var $links = $menu.querySelectorAll ('li a');
+    function destacaMenu(){
+        var positions = [];
+        for(var i = 0; i < $links.length; i++){
+          positions [i] = pegaYPosiçãoScroll($links[i])
+        }
+        console.log(positions);
+        var linkAtual = pegaUltimolinkvisivel(positions);
+        var linkActived = $menu.querySelector('.actived')
+        if(linkActived) linkActived.classList.remove('actived')
+        linkAtual.classList.add('actived');
+        function pegaYPosiçãoscroll(link){
+          var alvo = document.querySelector(link.getAttribute('href'));
+          var positionYViewport = alvo.getBoundingClientRect().top;
+          return positionYViewport;
+        }
+        function pegaUltimolinkvisivel(positions){
+          var qtd = positions.length;
+          while(qtd){
+            qtd --;
+            if(positions[qtd] < 0 ){
+            return$links[qtd]
+            }
+            return $links[0];
+          }
+        }
+      }
+    })
+  </script> 
+    <main class="main_content">
+      <div class="main_content-section">
+        <section id="section_imginicio"  class="main_section actived">
+          <div class="section_img inicio">
+            <div class="videocontent">
+              <img class="d-block w-100"  src="WhatsApp Image 2024-11-04 at 6.50.23 PMCAMPO DE ORAÇÃO1.jpg" alt="teste">
+            </div>
+            <div>
+              <br>
+              <p>Esquadrão da Vida</p>
+              <br>
+              <p>Comunidade Terapêutica</p>
+              <br>
+              <p>Salvando vidas, resgatando famílias!</p>
+          </div>
+        </section>
+        <section  id="section_imgsobrenos">
+          <div class="section_img sobrenos">
+             <br>
+             <p> O Esquadrão da Vida do município de Santa Vitória do Palmar/RS foi fundado em 2017 por Leonardo Silveira Primo.</p>
+             <br>
+             <p> A Comunidade Terapêutica presta serviço voluntário 24 horas por dia sem fins lucrativos.</p> 
+             <br>
+             <p> Em frente a sede são vendidos os produtos que são resultado do trabalho daqueles que estão fazendo parte da comunidade terapêutica.</p>
+             <br>
+             <p> Realizamos prevenção, recuperação e reinserção social para depentes químicos sem discriminação de idade, gênero, classe social, crença religiosa ou política.</p>
+             <br>
+             <p> Nosso objetivo é manternos sóbrios e ajudar todos os etilistas a alcançarem a sabriedade a fim de poder desfrutar de uma vida serena e feliz, livre das angústias do alcoolismo</p>
+             <br>
+            </div>    
+        </section>
+        <section id="section_imgmetodologia">
+          <div class="section_img metodologia">
+            <div class="videocontent">
+              <img class="d-block w-100"  src="WhatsApp Image 2024-10-30 at 6.35.29 PM3.jpg" alt="teste">
+            </div>
+            <div>
+              <br>
+              <p>Somos uma comunidade católica</p>
+              <br>
+              <p>Utilizamos a metodologia Al-Anon através da prática do doze passos</p>
+              <br>
+              <p>Realizamos a prática diária da gratidão e da disciplina</p>
+              <br>
+              <p>Oferecemos internação e trabalho de acordo com a aptidão de cada um</p>
+              <br>
+              <p> Atuamos no município de Santa Vitoria do Palmar, Chuy e demais localidades da região</p>
+              <br>
+            </div>
+          </div>
+        </section>
+        <section  id="section_imgprojetos">  
+          <div class="section_img projetos">
+            <div class="videocontent">
+              <div class="videocontent">
+                <img class="d-block w-100"  src="WhatsApp Image 2024-11-04 at 6.50.23 PM manhã de oração.jpg" alt="teste">
+              </div>
+            </div>  
+              <div>
+                  <br>
+                  <p>Produção de alimentos no Horto Florestal </p>
+                  <br>
+                  <p>Produção de derivados do leite, pães e etc.</p>
+                  <br>
+                  <p>Venda de tainha assada</p>
+                  <br>
+                  <p> Arrecadação de doações da comunidade santavitoriense</p>
+                  <br>
+             </div>
+          </div>
+        </section>  
+        <section  id="section_imgacolhimento">  
+          <div class="section_img acolhimento">
+            <div>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <p>Entre em contato com o cordenador da  Comunidade terapêutica Esquadrão Da Vida - SVP pessoalmente na sede ou pelo telefone ou e-mail disponibilizados na seção contato</p>
+              <br>
+              <br>
+              <br>
+           </div>
+          </div> 
+        </section>
+        <section id="section_imgfotos" >
+          <div class="section_img fotos" >
+            <div class="imagens">
+              <img src="WhatsApp Image 2024-10-30 at 6.48.42 PM3.jpg"  alt="" class="icon_img">
+            </div>
+            <div class="imagens">
+              <img src="WhatsApp Image 2024-10-30 at 7.28.37 PM3.jpg" alt="" class="icon_img">
+            </div>
+          </div>  
+        </section>
+        <section id="section_imglocalizacao">
+          <div  class="section_img localizacao" >
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.3532649511462!2d-53.386841290063494!3d-33.51819977325166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x950d1d823df4036b%3A0x3874f3c3fafd2963!2sAv.%20Get%C3%BAlio%20Vargas%2C%201090%20-%20Santa%20Vit%C3%B3ria%20do%20Palmar%2C%20RS%2C%2096230-000!5e0!3m2!1spt-BR!2sbr!4v1730413410139!5m2!1spt-BR!2sbr" width="300" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </section>
+        <section id="section_imgcontato">  
+          <div section_img contato>
+            <div>
+              <p>Sede Esquadrão da Vida</p>
+              <p>Avenida Getúlio Vargas, número 1090</p>
+              <number>Fone:(53)999731910</number>
+              <br>
+              <e-mail>email:primoleonardo73@gmail.com</e-mail>
+            </div>
+          </div>
+        </section>
+    </main>
+    <footer class="midias_footer">
+      <div class="mr-3">
+        <ul>
+          <li><a href="https://www.facebook.com/people/Comunidade-terapêutica-Esquadrão-Da-Vida-SVP/100064516579292/" target="_blank"><img src="facebook_5968764 (2).png" alt="icone facebook" class="icone-src"  ></a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
